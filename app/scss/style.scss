@@ -3,13 +3,54 @@
 @import "fonts";
 @import "global";
 
+@mixin triangle($w, $h) {
+    height: $h;
+    width: $w;
+    border: 1px solid #fe5757;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-top-width: $h/2;
+    border-bottom-width: $h/2;
+    border-left-width: $w/2;
+    border-right-width: $w/2;
+}
+
 .triangle {
-  border: 66px solid #fe5757;
-  border-top-color: transparent;
-  border-top-width: 69px;
-  border-left-color: transparent;
-  border-left-width: 59px;
-  height: 125px;
-  width: 125px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    @include triangle(600px, 705px);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.face {
+
+    &__inner {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__col {
+        position: relative;
+        min-height: 800px;
+        flex-basis: 50%; //!!!
+    }
+
+    &__title {
+        font-weight: 600;
+        font-size: 59px;
+        line-height: 72px;
+        letter-spacing: 0.12em;
+        padding-left: 95px;
+        width: 560px;
+
+    }
+
+    &__text {
+        max-width: 512px;
+        padding-left: 95px;
+    }
+
+    &__btn {
+        margin-left: 95px;
+    }
 }
