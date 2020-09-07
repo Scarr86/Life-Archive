@@ -2,3 +2,12 @@
 @import "libs";
 @import "fonts";
 @import "global";
+
+.triangle {
+  border: 62px solid #fe5757;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-left-width: 56px;
+  height: 132px;
+  width: 125px;
+}
