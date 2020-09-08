@@ -20,6 +20,7 @@
     "normalize.css": "^8.0.1"
   },
   "dependencies": {
+    "gulp-selectors": "^0.1.10",
     "slick-carousel": "^1.8.1"
   }
 }

@@ -5,7 +5,8 @@ let gulp = require('gulp'),
 	concat = require('gulp-concat'),
 	rename = require('gulp-rename'),
 	del = require('del'),
-	autoprefixer = require('gulp-autoprefixer');
+	autoprefixer = require('gulp-autoprefixer'),
+	gs = require('gulp-selectors')
 const { dest } = require('gulp');
 
 
@@ -20,7 +21,7 @@ gulp.task('concat', function () {
 })
 
 gulp.task('scss', function () {
-	return gulp.src([ 'app/scss/**/*.scss'])
+	return gulp.src(['app/scss/**/*.scss'])
 		.pipe(sass({ outputStyle: 'compressed' }))
 		.pipe(autoprefixer({
 			overrideBrowserslist: ['last 8 versions']
@@ -70,11 +71,11 @@ gulp.task('browser-sync', function () {
 });
 
 gulp.task('export', function () {
-	let buildHtml = gulp.src('app/**/*.html')
-		.pipe(gulp.dest('dist'));
+	// let buildHtml = gulp.src('app/**/*.html')
+	// 	.pipe(gulp.dest('dist'));
 
-	let BuildCss = gulp.src('app/css/**/*.css')
-		.pipe(gulp.dest('dist/css'));
+	// let BuildCss = gulp.src('app/css/**/*.css')
+	// 	.pipe(gulp.dest('dist/css'));
 
 	let BuildJs = gulp.src('app/js/**/*.js')
 		.pipe(gulp.dest('dist/js'));
@@ -84,6 +85,10 @@ gulp.task('export', function () {
 
 	let BuildImg = gulp.src('app/img/**/*.*')
 		.pipe(gulp.dest('dist/img'));
+
+	let Selectors = gulp.src(['app/css/*.css', "app/index.html"])
+		.pipe(gs.run())
+		.pipe(gulp.dest(['dist/css', 'dist']))
 });
 
 gulp.task('watch', function () {
