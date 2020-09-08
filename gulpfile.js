@@ -86,9 +86,9 @@ gulp.task('export', function () {
 	let BuildImg = gulp.src('app/img/**/*.*')
 		.pipe(gulp.dest('dist/img'));
 
-	let Selectors = gulp.src(['app/css/*.css', "app/index.html"])
+	let Selectors = gulp.src(['app/css/*.css', "app/index.html"], { base: 'app' })
 		.pipe(gs.run())
-		.pipe(gulp.dest(['dist/css', 'dist']))
+		.pipe(gulp.dest(['dist']))
 });
 
 gulp.task('watch', function () {
