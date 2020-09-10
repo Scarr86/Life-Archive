@@ -1,11 +1,22 @@
-$accent : #FE5757;
+$accent: #fe5757;
 
 @mixin f400() {
-	font-family: 'Roboto', sans-serif;
-	font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
 }
 
 @mixin f500 {
-	font-family: 'Roboto', sans-serif;
-	font-weight: 500;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+}
+@mixin triangle($w, $h, $color: #fe5757) {
+  height: $h;
+  width: $w;
+  border: 1px solid $color;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-top-width: $h/2;
+  border-bottom-width: $h/2;
+  border-left-width: $w/2;
+  border-right-width: $w/2;
 }

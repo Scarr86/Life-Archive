@@ -74,3 +74,83 @@ img {
 .accent {
   color: $accent;
 }
+
+.form-field {
+  text-align: left;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.06em;
+  position: relative;
+
+  &__input {
+    margin-bottom: 51px;
+  }
+
+  &__input:focus + &__placeholder,
+  &__input:valid + &__placeholder {
+    display: none;
+  }
+
+  &__placeholder {
+    position: absolute;
+    padding: 9px 9px;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+
+    span {
+      color: $accent;
+    }
+  }
+}
+
+.form-btn {
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 57px;
+  letter-spacing: 0.12em;
+  color: #fff;
+  width: 237px;
+  height: 57px;
+  padding: 0;
+  background-color: $accent;
+  border: none;
+  cursor: pointer;
+}
+
+.form-input {
+  border: none;
+  border-bottom: 1px solid #020305;
+  width: 100%;
+  padding: 9px 9px;
+  outline: none;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.06em;
+
+  &:focus {
+    border-bottom: 1px solid $accent;
+  }
+}
+.triangle-bg {
+  position: relative;
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+  }
+
+  &::before {
+    @include triangle(52px, 52px, #000);
+    top: 0;
+    right: 220px;
+  }
+
+  &::after {
+    @include triangle(122px, 132px);
+    top: 25px;
+    right: 150px;
+  }
+}
