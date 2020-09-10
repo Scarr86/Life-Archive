@@ -94,8 +94,8 @@ gulp.task('export', async function () {
 	let BuildFonts = gulp.src('app/fonts/**/*.*')
 		.pipe(gulp.dest('dist/fonts'));
 
-	let BuildImg = gulp.src('app/img/**/*.*')
-		.pipe(gulp.dest('dist/img'));
+	let BuildImg = gulp.src('app/images/**/*.*')
+		.pipe(gulp.dest('dist/images'));
 
 	let Selectors = gulp.src(['app/css/style.min.css', "app/index.html"], { base: 'app' })
 		.pipe(gs.run())
